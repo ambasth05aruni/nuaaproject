@@ -1,0 +1,32 @@
+
+$brand:   #E75650;
+$white:   #fff;
+$text:    #1a1a1a;
+$muted:   #888;
+$border:  #eee;
+$font:    'Inter', sans-serif;
+
+
+$spacing-xs:   4px;
+$spacing-sm:   8px;
+$spacing-md:  16px;
+$spacing-lg:  24px;
+$spacing-xl:  40px;
+$spacing-2xl: 64px;
+
+
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:  12px;
+$radius-xl:  20px;
+$radius-full: 9999px;
+
+
+$shadow-card:   0 2px 12px rgba(0, 0, 0, 0.07);
+$shadow-raised: 0 4px 20px rgba(0, 0, 0, 0.1);
+$shadow-drawer: -4px 0 32px rgba(0, 0, 0, 0.12);
+
+//break=points
+$bp-desktop: 1024px;
+$bp-tablet:   767px;
+$bp-mobile:   480px;

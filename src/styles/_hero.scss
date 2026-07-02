@@ -1,0 +1,76 @@
+@use './variables' as *;
+
+// Announcement bar
+.announcement-bar {
+  background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 9px 16px;
+  letter-spacing: 0.01em;
+
+  strong { color: $white; }
+}
+
+// Hero
+.hero {
+  background: #fff8f7;
+  border-bottom: 1px solid #f0e8e8;
+  padding: 56px 24px 60px;
+
+  @media (max-width: 767px) {
+    padding: 40px 16px 48px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 12px 40px;
+  }
+
+  .hero-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $brand;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: #1a1a1a;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: $brand;
+    color: $white;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.88; }
+  }
+}

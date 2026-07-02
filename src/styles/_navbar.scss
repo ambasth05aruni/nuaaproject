@@ -1,0 +1,237 @@
+@use './variables' as *;
+
+.navbar {
+  background: $brand;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .navbar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: $white;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+  }
+
+  .navbar-secure-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    a {
+      color: rgba($white, 0.85);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background: rgba($white, 0.15);
+        color: $white;
+      }
+    }
+
+    .more-wrapper {
+      position: relative;
+
+      .more-btn {
+        color: rgba($white, 0.85);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover {
+          background: rgba($white, 0.15);
+          color: $white;
+        }
+      }
+
+      .more-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        background: $white;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        min-width: 160px;
+        padding: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          height: 12px;
+          background: transparent;
+        }
+
+        &.open {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateY(0);
+        }
+
+        a {
+          display: block;
+          color: #333;
+          padding: 8px 12px;
+          border-radius: 6px;
+          font-size: 0.875rem;
+          background: none;
+
+          &:hover {
+            background: #f5f5f5;
+            color: $brand;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-search-wrapper {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 16px;
+
+    @media (max-width: 767px) {
+      margin: 0 8px;
+    }
+
+    @media (max-width: 600px) {
+      max-width: 160px;
+    }
+
+    @media (max-width: 380px) {
+      max-width: 100px;
+      margin: 0 4px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba($white, 0.75);
+      pointer-events: none;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 12px 8px 36px;
+      background: rgba($white, 0.15);
+      border: 1.5px solid transparent;
+      border-radius: 20px;
+      color: $white;
+      font-size: 0.85rem;
+      outline: none;
+      transition: background 0.2s, border-color 0.2s;
+      font-family: inherit;
+
+      &::placeholder {
+        color: rgba($white, 0.75);
+      }
+
+      &:focus {
+        background: rgba($white, 0.25);
+        border-color: rgba($white, 0.4);
+      }
+    }
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .nav-profile-btn {
+      background: none;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+
+      &:hover { background: rgba($white, 0.15); }
+    }
+
+    .cart-btn {
+      position: relative;
+      background: rgba($white, 0.15);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+
+      &:hover { background: rgba($white, 0.28); }
+
+      .badge {
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        background: $white;
+        color: $brand;
+        font-size: 0.65rem;
+        font-weight: 800;
+        min-width: 17px;
+        height: 17px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .navbar-links { display: none; }
+    .navbar-inner { padding: 0 16px; }
+  }
+
+  @media (max-width: 380px) {
+    .navbar-inner { padding: 0 12px; }
+    .navbar-logo { font-size: 1.25rem; }
+  }
+}

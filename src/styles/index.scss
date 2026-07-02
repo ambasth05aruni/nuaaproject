@@ -1,0 +1,30 @@
+@use './variables' as *;
+@use './navbar';
+@use './cart-drawer';
+@use './hero';
+@use './product-card';
+@use './product-detail';
+@use './checkout';
+@use './toast';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: $font;
+  background: #f9f9f9;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+}
+
+
