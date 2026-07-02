@@ -54,4 +54,4 @@ npm run preview
 
 
 ## Live Demo
-link: 
+link: https://nuaaproject.vercel.app/
